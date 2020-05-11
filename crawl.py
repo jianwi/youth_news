@@ -66,5 +66,12 @@ class Crawl:
 
 
 if __name__ == '__main__':
-    t = Crawl('香港', 3, 4)
+    print("请输入关键字：")
+    keyword = input()
+    print("请输入开始页：")
+    start = input()
+    print("请输入结束页:")
+    end = input()
+    print('ok,开始喽')
+    t = Crawl(keyword, int(start), int(end))
     t.run()
