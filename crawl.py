@@ -47,11 +47,11 @@ class Crawl:
 
         print("标题："+title)
         # 取文章内容
-        article_xpath = dom.xpath("//div[@id='content']")
-        # 转成 utf-8
-        article = etree.tostring(article_xpath[0], encoding="utf-8", pretty_print=True, method="html").decode('utf-8')
+        article_xpath = dom.xpath("//div[@id='content']//text()")
+        # 不保留html 标签
+        article = "".join(article_xpath)
+        # article = etree.tostring(article_xpath[0], encoding="utf-8", pretty_print=True, method="html").decode('utf-8')
         print("网页内容：\n"+article)
-
         print("\n- - - - -\n")
 
     # 获取 s 参数
